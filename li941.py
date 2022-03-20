@@ -1,0 +1,22 @@
+import heapq
+x=[7,8,9,0,1,2,3,4,5,6]
+heapq.heapify(x)#转换为堆
+print(x)
+heapq.heappush(x,4)
+print(x)
+heapq.heappop(x)#弹出一个最小值，堆不变
+print(x)
+m=heapq.heappushpop(x,5)#先放入5，然后弹出返回最小
+print(m)#弹出的最小值
+print(x)
+w=heapq.heapreplace(x,7)#先弹出并返回最小，再放入7
+print(w)
+print(x)
+a=[1,25,64,259]
+b=[6,14,34,68,97,123]
+c=heapq.merge(a,b)#将多个已排序的输入合并为已排序的输出
+print(list(c))
+i=heapq.nlargest(3,b)#取前3个最大值
+o=heapq.nsmallest(3,b)#取前三个最小值
+print(i)
+print(o)
