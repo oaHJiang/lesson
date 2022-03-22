@@ -8,8 +8,8 @@ with open('file.txt','r',encoding='UTF-8') as f:
 '''
 with open('file.txt','r',encoding='UTF-8') as f:
     x=f.readline()
-    print(x)      #读到一行，包括结果的换行，print又换行，多个换行
-    #解决：print(x,end="")
+    print(x)      #读到一行，包括结果的换行,print又换行,多个换行
+    #解决:print(x,end="")
     #或者x.strip() 去掉末尾的'\n'
 '''
 '''
@@ -28,4 +28,10 @@ with open('file.txt','r',encoding='UTF-8') as f:
 from datetime import datetime
 file='file.txt'
 with open('file.txt','r',encoding='UTF-8') as f:
-    for line
+    for hang in f.readlines():
+        myData,price=hang.split(',')
+        dt=datetime.strptime(myData,'%Y/%m/%d')
+        #print(dt)
+        price=float(price)
+        #print(dt,price)
+        print('时间是：',str(dt.date()),',销售额是：'+str(price))
