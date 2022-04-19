@@ -15,13 +15,16 @@ cursor.execute('insert into lesson(id,name) values(%s,%s)', ['003','王五'])
 conn.commit()#提交
 '''
 #查询
-
-cursor.execute('select * from lesson')
-values=cursor.fetchall()
+cursor.execute("update lesson set name='虎哥' where id='001'")
+cursor.execute('select * from lesson') # *代表全部字段
+values=cursor.fetchall() # fetchone()查找一条，fetchmany(3)提取3条数据
 for x in values:
     print(x)
 
 cursor.close()
 conn.close()
 
-
+#删除
+#cursor.execute("delete from lesson where id='001'")
+#更新
+#cursor.execute("update lesson set name='虎哥' where id='001'")
